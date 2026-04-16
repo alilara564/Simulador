@@ -6,3 +6,13 @@ function calcularDisponibles(ingresos,egresos){
     }
     return disponibles;
 }
+
+function calcularCapacidadDePago(monto_disponible){
+    let capacidad_pago = monto_disponible / 2;
+    return capacidad_pago;
+}
+
+function mostrarEnSpan(id_span, valor){
+    let elemento = document.getElementById(id_span);
+    elemento.innerText = parseFloat(valor).toFixed(2);
+}

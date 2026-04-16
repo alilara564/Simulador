@@ -1,14 +1,13 @@
 //AQUI EL JAVASCRIPT PARA MANIPULAR EL HTML
 
-import { calcularDisponibles } from "./funciones.js";
-
-
-function calcular(){
+calcular = function(){
     let ingresos = parseFloat(document.getElementById("txtIngresos").value);
     let egresos = parseFloat(document.getElementById("txtEgresos").value);
     let disponible = calcularDisponibles(ingresos, egresos);
+    let capacidad_pago = calcularCapacidadDePago(disponible);
     
     
-    const elemento = document.getElementById('spnDisponible');
-    elemento.innerText =  disponible.toFixed(2);
+    mostrarEnSpan("spnDisponible", disponible);
+    mostrarEnSpan("spnCapacidadPago", capacidad_pago);   
+
 }
