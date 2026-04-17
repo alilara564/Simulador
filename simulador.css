@@ -166,7 +166,7 @@ button:active {
 }
 
 /* MODO OSCURO AUTOMÁTICO */
-@media (prefers-color-scheme: with-dark) {
+@media (prefers-color-scheme: dark) {
 
     body {
         background: radial-gradient(circle at top, #0f1115, #1c1f26);
