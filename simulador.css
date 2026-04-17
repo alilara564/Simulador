@@ -1,70 +1,237 @@
+/* Fondo más premium (profundidad tipo iOS moderno) */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at top, #f5f7fb, #e6ecf5);
     margin: 0;
     padding: 0;
+    color: #1c1c1e;
 }
 
+/* Contenedor con efecto vidrio avanzado */
 .container {
     width: 400px;
+    max-width: 92%;
     margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 26px;
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.12),
+        inset 0 1px 1px rgba(255,255,255,0.6);
 }
 
+/* Título */
 h1 {
     text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
     margin-bottom: 20px;
 }
 
+/* Subtítulos */
 h2 {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3a3a3c;
 }
 
+/* Labels */
 label {
+    margin-top: 14px;
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    font-size: 13px;
+    color: #8e8e93;
 }
 
+/* Inputs estilo iOS premium */
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    padding: 13px;
+    margin-top: 6px;
+    border-radius: 16px;
+    border: none;
+
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,0.05),
+        0 1px 0 rgba(255,255,255,0.6);
+
+    font-size: 15px;
+    transition: all 0.25s ease;
 }
 
+/* Focus elegante */
+input:focus {
+    outline: none;
+    background: #ffffff;
+    box-shadow:
+        0 0 0 2px rgba(0,122,255,0.25),
+        0 4px 12px rgba(0,122,255,0.15);
+}
+
+/* Resultados */
 p {
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 14px;
 }
 
+/* Valores */
 span {
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 600;
+    color: #007aff;
 }
 
+/* Estado tipo etiqueta iOS */
+#spnEstadoCredito {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0,122,255,0.12);
+    backdrop-filter: blur(10px);
+    font-size: 12px;
+}
+
+/* Botones contenedor */
 .buttons {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: space-between;
 }
 
+/* 🔵 BOTONES BURBUJA (lo importante) */
 button {
     width: 48%;
-    padding: 10px;
+    padding: 14px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
+    border-radius: 999px; /* totalmente redondo tipo burbuja */
+
+    background: linear-gradient(145deg, #0a84ff, #0066ff);
     color: white;
-    font-weight: bold;
+
+    font-size: 15px;
+    font-weight: 600;
+
     cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,122,255,0.35),
+        inset 0 -2px 5px rgba(0,0,0,0.2),
+        inset 0 2px 5px rgba(255,255,255,0.3);
+
+    transition: all 0.25s ease;
 }
 
+/* Hover (flotante) */
 button:hover {
-    background-color: #2980b9;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 15px 30px rgba(0,122,255,0.45),
+        inset 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Click (presionado realista) */
+button:active {
+    transform: scale(0.96);
+    box-shadow:
+        inset 0 4px 10px rgba(0,0,0,0.25),
+        0 5px 10px rgba(0,0,0,0.15);
+}
+
+/* ------------------ */
+/* 📱 RESPONSIVE */
+/* ------------------ */
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* MODO OSCURO AUTOMÁTICO */
+@media (prefers-color-scheme: with-dark) {
+
+    body {
+        background: radial-gradient(circle at top, #0f1115, #1c1f26);
+        color: #f2f2f7;
+    }
+
+    .container {
+        background: rgba(28, 28, 30, 0.65);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.6),
+            inset 0 1px 1px rgba(255,255,255,0.05);
+    }
+
+    h2 {
+        color: #d1d1d6;
+    }
+
+    label {
+        color: #8e8e93;
+    }
+
+    input {
+        background: rgba(44,44,46,0.8);
+        color: #ffffff;
+        box-shadow:
+            inset 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    input:focus {
+        background: #2c2c2e;
+        box-shadow:
+            0 0 0 2px rgba(10,132,255,0.4),
+            0 4px 12px rgba(10,132,255,0.25);
+    }
+
+    p {
+        color: #d1d1d6;
+    }
+
+    span {
+        color: #0a84ff; /* azul iOS dark */
+    }
+
+    #spnEstadoCredito {
+        background: rgba(10,132,255,0.2);
+        color: #ffffff;
+    }
+
+    button {
+        background: linear-gradient(145deg, #0a84ff, #0066ff);
+        box-shadow:
+            0 10px 25px rgba(10,132,255,0.5),
+            inset 0 -2px 6px rgba(0,0,0,0.5),
+            inset 0 2px 6px rgba(255,255,255,0.1);
+    }
+
+    button:hover {
+        box-shadow:
+            0 15px 30px rgba(10,132,255,0.6);
+    }
+
+    button:active {
+        box-shadow:
+            inset 0 4px 12px rgba(0,0,0,0.7),
+            0 5px 10px rgba(0,0,0,0.4);
+    }
 }
