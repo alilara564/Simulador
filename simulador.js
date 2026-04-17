@@ -28,4 +28,39 @@ calcular = function(){
     document.getElementById("spnEstadoCredito").innerText = resultado;
 
 
+    const v1 = validarNumero("txtIngresos", "error-txtIngresos");
+    const v2 = validarNumero("txtEgresos", "error-txtEgresos");
+    const v3 = validarNumero("txtMonto", "error-txtMonto");
+    const v4 = validarNumero("txtPlazo", "error-txtPlazo");
+    const v5 = validarNumero("txtTasaInteres", "error-txtTasaInteres");
+
+
+}
+
+function validarNumero(idInput, idError) {
+  const input = document.getElementById(idInput);
+  const error = document.getElementById(idError);
+
+  const valor = input.value.trim();
+  error.textContent = "";
+
+  // vacío
+  if (valor === "") {
+    error.textContent = "Este campo es obligatorio";
+    return false;
+  }
+
+  // solo números
+  if (!/^\d+$/.test(valor)) {
+    error.textContent = "Solo se permiten números";
+    return false;
+  }
+
+  // máximo 5 dígitos
+  if (valor.length > 5) {
+    error.textContent = "Máximo 5 dígitos";
+    return false;
+  }
+
+  return true;
 }

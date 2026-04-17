@@ -145,6 +145,13 @@ button:active {
         0 5px 10px rgba(0,0,0,0.15);
 }
 
+.error {
+  color: rgb(201, 39, 39);
+  font-style: italic;
+  display: block;
+  margin-bottom: 8px;
+}
+
 /* ------------------ */
 /* 📱 RESPONSIVE */
 /* ------------------ */

@@ -14,9 +14,12 @@
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
         <input type="text" id="txtIngresos" value="1000">
+        <small class="error" id="error-txtIngresos"></small>
  
         <label for="txtEgresos">Egresos:</label>
         <input type="text" id="txtEgresos" value="600">
+        <small class="error" id="error-txtEgresos"></small>
+
  
         <p>Disponible: <span id="spnDisponible" ></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
@@ -24,12 +27,15 @@
         <h2>Solicitud de crédito</h2>
         <label for="txtMonto">Monto:</label>
         <input type="text" id="txtMonto" value="2000">
+        <small class="error" id="error-txtMonto"></small>
  
         <label for="txtPlazo">Plazo en años:</label>
         <input type="text" id="txtPlazo" value="1">
+        <small class="error" id="error-txtPlazo"></small>
  
         <label for="txtTasaInteres">Tasa de interés:</label>
         <input type="text" id="txtTasaInteres" value="10">
+        <small class="error" id="error-txtTasaInteres"></small>
  
         <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
         <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
