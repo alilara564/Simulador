@@ -244,8 +244,6 @@ button:active {
 }
 
 .logo {
-    display: block;
-    margin: 0 auto 20px auto;
     width: 200px;
     display: flex;
     justify-content: center;
