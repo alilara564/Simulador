@@ -27,6 +27,8 @@ calcular = function(){
     let resultado = aprobarCredito(capacidad_pago, cuota_mensual);
     document.getElementById("spnEstadoCredito").innerText = resultado;
 
+    mostrarSuma();
+
 
     const v1 = validarNumero("txtIngresos", "error-txtIngresos");
     const v2 = validarNumero("txtEgresos", "error-txtEgresos");
@@ -37,7 +39,19 @@ calcular = function(){
 
 }
 
+function mostrarSuma(){
+    let a = parseFloat(document.getElementById("txtArriendo").value);
+    let b = parseFloat(document.getElementById("txtAlimentacion").value);
+    let c = parseFloat(document.getElementById("txtVarios").value);
+
+    let resultado = sumar(a,b,c);
+    document.getElementById("spnSuma").innerText = resultado.toFixed(2);
+}
+
 function reiniciar(){
+    document.getElementById("txtArriendo").value = "";
+    document.getElementById("txtAlimentacion").value = "";
+    document.getElementById("txtVarios").value = "";
     document.getElementById("txtIngresos").value = "";
     document.getElementById("txtEgresos").value = "";
     document.getElementById("txtMonto").value = "";

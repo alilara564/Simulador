@@ -39,3 +39,7 @@ function mostrarEnSpan(id_span, valor){
     let elemento = document.getElementById(id_span);
     elemento.innerText = parseFloat(valor).toFixed(2);
 }
+
+function sumar(a,b,c){
+    return a + b + c;
+}
